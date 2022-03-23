@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+</head>
+<body>
+    <h1>Send A Email</h1>
+    <form action="{% url 'email' %}" method="post"></form>
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>TO :</td>
+            <td>
+                <input type="text" name="username" placeholder="Name">
+            </td>
+            
+        </tr>
+        <tr>
+            <td>
+                <input type="email",name='send_to'placeholder='Send'>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <textarea name="content" id="" cols="30" rows="10" placeholder="Message"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <button type="submit">Send</button>
+            </td>
+            <td>
+                <button type="reset">Clear</button>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
